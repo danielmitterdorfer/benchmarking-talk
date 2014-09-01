@@ -3,7 +3,7 @@ Benchmarking Talk
 
 This project contains a purposefully flawed hand-written microbenchmark and a corresponding microbenchmark using the Java Microbenchmarking Harness ([JMH](http://openjdk.java.net/projects/code-tools/jmh)).
 
-It accompanies a short talk on microbenchmarking at the [Software Performance Meetup Group](http://www.meetup.com/Software-Performance-Meetup-Group/) in Munich.
+It accompanies a short talk on microbenchmarking at the [Software Performance Meetup Group](http://www.meetup.com/Software-Performance-Meetup-Group/) in Munich ([Slides](http://daniel.mitterdorfer.name/talks/2014/jmh-microbenchmarking-munich/)).
 
 # Getting Started
 
