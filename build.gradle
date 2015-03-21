@@ -3,9 +3,21 @@
  * Maven build scripts in the example project; see http://hg.openjdk.java.net/code-tools/jmh/file/86072ed4c056/jmh-samples/pom.xml
  */
 
-apply plugin: 'idea'
-apply plugin: 'java'
-apply plugin: 'com.github.johnrengelman.shadow'
+//see https://github.com/johnrengelman/shadow
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.1'
+    }
+}
+
+plugins {
+    id 'idea'
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '1.2.1'
+}
 
 version = '0.1.0'
 sourceCompatibility = 1.8
@@ -28,7 +40,7 @@ repositories {
     mavenCentral()
 }
 
-ext.jmhVersion = '1.0'
+ext.jmhVersion = '1.7'
 
 dependencies {
     compile "org.openjdk.jmh:jmh-core:$jmhVersion"
@@ -47,18 +59,12 @@ idea {
     }
 }
 
-//see https://github.com/johnrengelman/shadow
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.github.jengelman.gradle.plugins:shadow:1.0.2'
-    }
-}
-
 jar {
     manifest {
         attributes("Main-Class": "org.openjdk.jmh.Main")
     }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2.1'
 }

@@ -13,7 +13,16 @@ The project requires at least JDK 8 and Gradle 2.0 or Maven 3.0.
 
 ## Installation
 
-Installation with Gradle (recommended):
+If Gradle is not installed:
+
+```
+git clone https://github.com/danielmitterdorfer/benchmarking-talk.git
+cd benchmarking-talk
+./gradlew shadow
+java -jar build/libs/benchmarking-talk-0.1.0-all.jar
+```
+
+Or alternatively, if Gradle > 2.1 is installed:
 
 ```
 git clone https://github.com/danielmitterdorfer/benchmarking-talk.git
@@ -22,7 +31,7 @@ gradle shadow
 java -jar build/libs/benchmarking-talk-0.1.0-all.jar
 ```
 
-or alternatively with Maven:
+or finally with Maven:
 
 ```
 git clone https://github.com/danielmitterdorfer/benchmarking-talk.git
